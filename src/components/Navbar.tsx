@@ -1,5 +1,5 @@
 import { Button, Input } from '@mui/joy'
-import React, { useState } from 'react'
+import React, { ReactElement, useState } from 'react'
 import { AiOutlineSearch } from 'react-icons/ai'
 import { useNavigate } from 'react-router-dom';
 import Wrapper from './Wrapper'
@@ -31,7 +31,7 @@ function NavBar() {
   )
 };
 
-function withNavBar(Component: typeof React.Component){
+function withNavBar(Component: () => ReactElement){
   return <>
     <NavBar />
     <Component />
