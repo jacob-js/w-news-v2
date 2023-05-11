@@ -1,5 +1,7 @@
 import articles from "./articles";
+import publishers from "./publishers";
 
 export default {
-    articles
+    articles,
+    publishers
 }
