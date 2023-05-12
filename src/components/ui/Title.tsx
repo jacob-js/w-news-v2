@@ -4,8 +4,8 @@ import changeRoute from '../../helpers/changeRoute';
 
 interface Props {
     text: string;
-    withBackIcon: boolean;
-    onBack: Function
+    withBackIcon?: boolean;
+    onBack?: Function
 }
 
 function Title({text, withBackIcon, onBack}: Props) {

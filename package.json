@@ -15,6 +15,7 @@
     "@fontsource/public-sans": "^4.5.12",
     "@mui/joy": "^5.0.0-alpha.79",
     "@reduxjs/toolkit": "^1.9.5",
+    "@types/swiper": "^6.0.0",
     "axios": "^1.4.0",
     "moment": "^2.29.4",
     "nanoid": "^4.0.2",

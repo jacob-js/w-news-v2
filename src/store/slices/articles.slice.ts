@@ -1,10 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
-import intialStates from "../intialStates";
+import intialStates from "../initialStates";
 import getArticles from "../actions/getArticles.action";
-import AtricleInterface from "../interfaces/Article.interface";
+import ArticleInterface from "../interfaces/Article.interface";
 import { nanoid } from "nanoid";
 
-const generateArticlesWithIds = (articles: AtricleInterface[]) => articles.map(article => ({...article, id: nanoid()}));
+const generateArticlesWithIds = (articles: ArticleInterface[]) => articles.map(article => ({...article, id: nanoid()}));
 
 const articlesSlice = createSlice({
     name: 'articles',

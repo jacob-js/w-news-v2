@@ -1,4 +1,4 @@
-interface AtricleInterface {
+interface ArticleInterface {
     publishedAt: string;
     title: string;
     content: string;
@@ -6,4 +6,4 @@ interface AtricleInterface {
     id: string;
 };
 
-export default AtricleInterface
+export default ArticleInterface

@@ -6,6 +6,7 @@ import useAppSelector from '../hooks/useAppSelector';
 import getArticles from '../store/actions/getArticles.action';
 import ArticleCard from '../components/ArticleCard';
 import Skeletons from '../components/Skeletons';
+import Publishers from '../components/Publishers';
 
 function Home() {
     const dispatch = useAppDispatch();
@@ -35,6 +36,7 @@ function Home() {
                     <div className="text-gray-600 ml-3">No Data Found!</div>
                 </div>
             }
+            <Publishers />
         </div>
     </Wrapper>
   )
