@@ -10,7 +10,12 @@ const generateArticlesWithIds = (articles: ArticleInterface[]) => articles.map(a
 const articlesSlice = createSlice({
     name: 'articles',
     initialState: intialStates.articles,
-    reducers: {},
+    reducers: {
+        filterArticles: (state, {payload}) =>{
+            return {...state, filtered: {...state.filtered, data: state.articles.data.filter(article => article.title.toLowerCase().indexOf(payload.query) !== -1)}}
+        },
+        setFilterKeyWord: (state, {payload}) => ({...state, filterKeyword: payload})
+    },
     extraReducers(builder) {
         builder.addCase(getArticles.pending, (state) =>{
             return {...state, articles: {...state.articles, loading: true, error: null}}
@@ -27,5 +32,7 @@ const articlesSlice = createSlice({
         })
     },
 });
+
+export const {setFilterKeyWord, filterArticles} = articlesSlice.actions;
 
 export default articlesSlice.reducer

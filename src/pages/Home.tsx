@@ -7,6 +7,7 @@ import getArticles from '../store/actions/getArticles.action';
 import ArticleCard from '../components/ArticleCard';
 import Skeletons from '../components/Skeletons';
 import Publishers from '../components/Publishers';
+import { setFilterKeyWord } from '../store/slices/articles.slice';
 
 function Home() {
     const dispatch = useAppDispatch();
@@ -21,7 +22,7 @@ function Home() {
   return (
     <Wrapper>
         <div className='mt-14'>
-            <Title text={filterKeyword ? `Result for "${filterKeyword}" in articles`: "The world's latest news"} onBack={() =>{}} withBackIcon={Boolean(filterKeyword)} />
+            <Title text={filterKeyword ? `Result for "${filterKeyword}" in articles`: "The world's latest news"} onBack={() =>dispatch(setFilterKeyWord(""))} withBackIcon={Boolean(filterKeyword)} />
             <div className="grid sm:grid-cols-3 gap-10 mt-16">
                 {
                     loading ?
