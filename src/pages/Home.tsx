@@ -23,7 +23,7 @@ function Home() {
     <Wrapper>
         <div className='mt-14'>
             <Title text={filterKeyword ? `Result for "${filterKeyword}" in articles`: "The world's latest news"} onBack={() =>dispatch(setFilterKeyWord(""))} withBackIcon={Boolean(filterKeyword)} />
-            <div className="grid sm:grid-cols-3 gap-10 mt-16">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10 mt-16">
                 {
                     loading ?
                     <Skeletons count={9} />:

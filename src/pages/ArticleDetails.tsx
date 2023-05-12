@@ -10,7 +10,7 @@ function ArticleDetails() {
 
   return (
     <Wrapper>
-        <div className="mt-14 flex flex-col lg:flex-row gap-10 items-center pb-14">
+        <div className="mt-14 flex flex-col lg:flex-row gap-10 items-center pb-14 mb-20">
             <img src={data.urlToImage} alt={data.title} className="rounded-md lg:w-2/4" />
             <div className="flex flex-col gap-7">
                 <div className="space-y-5">

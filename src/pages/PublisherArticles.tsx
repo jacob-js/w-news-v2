@@ -20,9 +20,9 @@ function PublisherArticles() {
 
   return (
     <Wrapper>
-        <div className="mt-14 pb-14">
+        <div className="mt-14 pb-14 mb-20">
             <Title text={location.state?.name} withBackIcon />
-            <div className="grid sm:grid-cols-3 gap-10 mt-16">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10 mt-16">
                 {
                     loading ?
                     <Skeletons count={9} />:
