@@ -36,7 +36,7 @@ function Publishers() {
     };
 
     return (
-        <div className='my-14 overflow-hidden'>
+        <div className='mt-14 mb-28 overflow-hidden'>
             <div className="flex justify-between items-center mb-10">
                 <Title text="Publishers" />
                 <div className="flex gap-5">
