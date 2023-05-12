@@ -4,6 +4,8 @@ interface ArticleInterface {
     content: string;
     urlToImage: string;
     id: string;
+    author: string,
+    url: string
 };
 
 export default ArticleInterface
