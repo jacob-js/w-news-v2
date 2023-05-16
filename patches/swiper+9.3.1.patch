@@ -1,0 +1,16 @@
+diff --git a/node_modules/swiper/package.json b/node_modules/swiper/package.json
+index 8f6200a..3564c63 100644
+--- a/node_modules/swiper/package.json
++++ b/node_modules/swiper/package.json
+@@ -7,7 +7,10 @@
+   "main": "./swiper.esm.js",
+   "module": "./swiper.esm.js",
+   "exports": {
+-    ".": "./swiper.esm.js",
++    ".": {
++      "types": "./swiper.d.ts",
++      "default": "./swiper.esm.js"
++    },
+     "./core": "./swiper.esm.js",
+     "./swiper.esm.js": "./swiper.esm.js",
+     "./bundle": "./swiper-bundle.esm.js",
