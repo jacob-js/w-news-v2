@@ -13,8 +13,8 @@ function NavBar() {
   const dispatch = useAppDispatch();
   const filterKeyword = useAppSelector(state => state.articles.filterKeyword);
   
-  const handleSearchValueChange = (e: ChangeEvent<HTMLInputElement>)  =>{
-    const {value} = e.target;
+  const handleSearchValueChange = (event: ChangeEvent<HTMLInputElement>)  =>{
+    const {value} = event.target;
     dispatch(setFilterKeyWord(value));
     dispatch(filterArticles({query: value}))
   }

@@ -6,8 +6,8 @@ import { useEffect } from 'react';
 
 function ArticleDetails() {
     const location = useLocation();
-    const d = new URLSearchParams(location.search)
-    const data = Object.fromEntries(d.entries());
+    const searchParams = new URLSearchParams(location.search)
+    const data = Object.fromEntries(searchParams.entries());
     const navigate = useNavigate();
 
     useEffect(() =>{

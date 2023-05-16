@@ -28,7 +28,7 @@ function Publishers() {
                 setIsNextDisabled(data.length < 6)
             }
         })()
-    }, [swiper.current, data]);
+    }, [data]);
 
     const handleSlideChange = (isBeginning: boolean, isEnd: boolean) =>{
         setIsPrevDisabled(isBeginning);
