@@ -7,6 +7,7 @@ import ArticleCard from '../components/ArticleCard';
 import getArticlesByPublisherAction from '../store/actions/getArticlesByPublisher.action';
 import useAppSelector from '../hooks/useAppSelector';
 import useAppDispatch from '../hooks/useAppDispatch';
+import Empty from '../components/ui/Empty';
 
 function PublisherArticles() {
     const params = useParams();
@@ -18,7 +19,7 @@ function PublisherArticles() {
 
     useEffect(() =>{
       dispatch(getArticlesByPublisherAction(params.id as string))
-    }, []);
+    }, [params]);
 
     useEffect(() =>{
       (() =>{
@@ -38,6 +39,9 @@ function PublisherArticles() {
                     data.map((article, index) =><ArticleCard {...article} key={index} />)
                 }
             </div>
+            {
+              !data.length && !loading && <Empty />
+            }
         </div>
     </Wrapper>
   )

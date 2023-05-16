@@ -8,6 +8,7 @@ import ArticleCard from '../components/ArticleCard';
 import Skeletons from '../components/Skeletons';
 import Publishers from '../components/Publishers';
 import { setFilterKeyWord } from '../store/slices/articles.slice';
+import Empty from '../components/ui/Empty';
 
 function Home() {
     const dispatch = useAppDispatch();
@@ -32,10 +33,7 @@ function Home() {
             </div>
             {
                 !loading && !(filterKeyword ? filtered.length: data.length)&&
-                <div className='flex justify-center p-10 flex-col items-center gap-5'>
-                    <img src="/empty.svg" alt="No data!" className="w-32 object-center" />
-                    <div className="text-gray-600 ml-3">No Data Found!</div>
-                </div>
+                <Empty />
             }
             <Publishers />
         </div>
