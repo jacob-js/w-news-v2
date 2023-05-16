@@ -69,7 +69,7 @@ function Publishers() {
                 onSlideChange={slide =>handleSlideChange(slide.isBeginning, slide.isEnd)}
             >
                 {data.slice(10).map(({id, name}) =><SwiperSlide key={id}>
-                    <div className="py-3 border rounded-md group transition-all h-full flex flex-col items-center justify-center cursor-pointer" onClick={() =>changeRoute(navigate, `/publisher/${id}`, {state: {name}})}>{name}</div>
+                    <div className="py-3 border rounded-md group transition-all h-full flex flex-col items-center justify-center cursor-pointer" onClick={() =>changeRoute(navigate, `/publisher/${id}?name=${name}`)}>{name}</div>
                 </SwiperSlide>)}
             </Swiper>
         </div>

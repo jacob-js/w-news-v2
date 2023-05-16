@@ -59,10 +59,10 @@ function NavBar() {
 };
 
 function withNavBar(Component: () => ReactElement){
-  return <>
+  return <div className="min-h-screen">
     <NavBar />
     <Component />
-  </>
+  </div>
 }
 
 export default withNavBar;

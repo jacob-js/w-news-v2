@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { useLocation, useParams } from 'react-router-dom'
+import { useLocation, useNavigate, useParams } from 'react-router-dom'
 import Wrapper from '../components/Wrapper';
 import Title from '../components/ui/Title';
 import Skeletons from '../components/Skeletons';
@@ -12,16 +12,25 @@ function PublisherArticles() {
     const params = useParams();
     const location = useLocation();
     const dispatch = useAppDispatch();
+    const navigate = useNavigate();
     const {data, loading} = useAppSelector(state => state.articles.articlesByPublisher);
+    const nameParam = new URLSearchParams(location.search).get('name');
 
     useEffect(() =>{
       dispatch(getArticlesByPublisherAction(params.id as string))
-    }, [])
+    }, []);
+
+    useEffect(() =>{
+      (() =>{
+        if(!nameParam)  navigate('/', {replace: true})
+      })()
+    }, [nameParam])
+    
 
   return (
     <Wrapper>
         <div className="mt-14 pb-14 mb-20">
-            <Title text={location.state?.name} withBackIcon />
+            <Title text={nameParam as string} withBackIcon />
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10 mt-16">
                 {
                     loading ?
