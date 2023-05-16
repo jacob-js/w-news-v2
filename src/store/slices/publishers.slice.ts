@@ -1,6 +1,7 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import intialStates from "../initialStates";
 import getPublishersAction from "../actions/getPublishers.action";
+import PublisherInterface from "../interfaces/Publisher.interface";
 
 const publishersSlice = createSlice({
     name: 'publishers',
@@ -8,7 +9,7 @@ const publishersSlice = createSlice({
     reducers: {},
     extraReducers: builder =>{
         builder.addCase(getPublishersAction.pending, (state) => ({...state, publishers: {...state.publishers, loading: true, error: null}})),
-        builder.addCase(getPublishersAction.fulfilled, (state, {payload}) => ({...state, publishers: {...state.publishers, data: payload, error: null}}))
+        builder.addCase(getPublishersAction.fulfilled, (state, {payload}: PayloadAction<PublisherInterface[]>) => ({...state, publishers: {...state.publishers, data: payload, error: null}}))
     }
 });
 
