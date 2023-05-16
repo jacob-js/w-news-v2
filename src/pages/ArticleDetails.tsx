@@ -1,12 +1,22 @@
 import { Button } from '@mui/joy';
 import moment from 'moment';
-import { useLocation } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import Wrapper from '../components/Wrapper';
+import { useEffect } from 'react';
 
 function ArticleDetails() {
     const location = useLocation();
     const d = new URLSearchParams(location.search)
-    const data = Object.fromEntries(d.entries());    
+    const data = Object.fromEntries(d.entries());
+    const navigate = useNavigate();
+
+    useEffect(() =>{
+        (() =>{
+            for(const key of ["urlToImage", "title", "id", "author", "content", "url"]){
+                if(!Object.keys(data).includes(key)) navigate("..", {replace: true})
+            }
+        })()
+    }, [location])
 
   return (
     <Wrapper>
